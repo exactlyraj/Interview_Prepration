@@ -29,7 +29,11 @@ public class SortAListOfEmployeeBySalary {
         // Get it from Map and Group by Department Sort by max salary
         Map<String, List<Employee>> hm = new HashMap<>();
         hm.put("employee",list);
-        //.......
+
+
+        //Find the maximum salary from a list of Employee objects using streams.
+        System.out.println("Maximum salary from a list "+
+        list.stream().collect(Collectors.maxBy(Comparator.comparing(Employee::Salary))).get());
        }
 }
 
