@@ -7,8 +7,7 @@ public class CharacterCount {
     public static void main(String args[]){
         String s= "abhinav";
 
-        String arr[] = s.split("");
-        Map<String,Long> map = Arrays.stream(arr).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        Map<String,Long> map = Arrays.stream(s.split("")).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(map);
 
         Map<Character,Long> map2 = s.chars().mapToObj(ch-> (char) ch).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));

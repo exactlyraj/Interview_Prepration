@@ -17,7 +17,7 @@ public class ExecuterServiceMainClass {
         System.out.println("Responce of Callable Service "+futureResult);//It will show task not completed at this time.
         try {
             String result = futureResult.get(); // Blocks until task completes
-            System.out.println("Callable Result: " + result);
+            System.out.println("Responce of Callable Service " + result);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,28 +1,27 @@
 import java.util.*;
 public class ShorternUrlUsingBase62 {
     public static void main (String args[]){
-        shorternUrlUsingBase62();
-        decodeBase62();
+        shorternUrlUsingBase62(125L);
+        decodeBase62("cb");
     }
 
 
-    public static void shorternUrlUsingBase62(){
-        String BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    public static String shorternUrlUsingBase62(Long id){
+        String BASE62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         String url="https://localhost:8080/api";
-        Long id = 125l;
         StringBuilder sb = new StringBuilder();
         while(id>0){
         sb.append(BASE62.charAt((int)(id%62)));
         id = id/62;
         }
         System.out.println(sb.reverse().toString());
+        return sb.reverse().toString();
     }
 
 
-    public static void decodeBase62(){
-        String BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        String code = "cb";
-        Long id=0l;
+    public static void decodeBase62(String code){
+        String BASE62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        Long id=0L;
         for(int i = 0; i < code.length();i++){
             int index = BASE62.indexOf(code.charAt(i));
             System.out.println(index);
