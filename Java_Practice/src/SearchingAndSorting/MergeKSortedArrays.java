@@ -41,6 +41,7 @@ public class MergeKSortedArrays {
             result.add(node.value);
 
             // Insert next element from the same array
+            System.out.println(node.elementIndex + 1 +"vvv"+arrays[node.arrayIndex].length);
             if (node.elementIndex + 1 < arrays[node.arrayIndex].length) {
                 minHeap.add(new Node(
                         arrays[node.arrayIndex][node.elementIndex + 1],
